@@ -68,10 +68,11 @@ Y.namespace('M.atto_fontsize').Button = Y.Base.create('button', Y.M.editor_atto.
         });
 
         this.addToolbarMenu({
-            icon: 'e/styleprops',
             globalItemConfig: {
                 callback: this._changeStyle
             },
+            icon: 'icon',
+            iconComponent: 'atto_fontsize',
             items: items
         });
     },
