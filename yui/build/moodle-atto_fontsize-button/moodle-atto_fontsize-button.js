@@ -35,25 +35,25 @@ YUI.add('moodle-atto_fontsize-button', function (Y, NAME) {
 
 var sizes = [
         {
-            value: 1,
+            value: "xx-small",
             name: "X-Small"
         }, {
-            value: 2,
+            value: "x-small",
             name: "Small"
         }, {
-            value: 3,
+            value: "small",
             name: "Medium"
         }, {
-            value: 4,
+            value: "medium",
             name: "Large"
         }, {
-            value: 5,
+            value: "large",
             name: "X-Large"
         }, {
-            value: 6,
+            value: "x-large",
             name: "XX-Large"
         }, {
-            value: 7,
+            value: "xx-large",
             name: "XXX-Large"
         }
     ];
@@ -63,7 +63,7 @@ Y.namespace('M.atto_fontsize').Button = Y.Base.create('button', Y.M.editor_atto.
         var items = [];
         Y.Array.each(sizes, function(size) {
             items.push({
-                text: '<font size="' + size.value + '">' + size.name + '</font>',
+                text: '<span style="font-size:' + size.value + ';">' + size.name + '</span>',
                 callbackArgs: size.value,
                 callback: this._changeStyle
             });
