@@ -52,9 +52,6 @@ var sizes = [
         }, {
             value: 6,
             name: "XX-Large"
-        }, {
-            value: 7,
-            name: "XXX-Large"
         }
     ];
 
@@ -63,8 +60,8 @@ Y.namespace('M.atto_fontsize').Button = Y.Base.create('button', Y.M.editor_atto.
         var items = [];
         Y.Array.each(sizes, function(size) {
             items.push({
-                text: '<font size="' + size.value + '">' + size.name + '</font>',
-                callbackArgs: size.value,
+                text: '<div style="font-size:' + size.value + ';">' + size.name + '</div>',
+                callbackArgs: size.name,
                 callback: this._changeStyle
             });
         });
@@ -88,8 +85,10 @@ Y.namespace('M.atto_fontsize').Button = Y.Base.create('button', Y.M.editor_atto.
      * @private
      */
     _changeStyle: function(e, size) {
-        document.execCommand("fontSize", false, size);
-    }
+        this.get('host').formatSelectionInlineStyle({
+            fontSize: size
+        });
+      }
 });
 
 
