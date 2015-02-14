@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2015021000;        // The current plugin version (Date: YYYYMMDDXX).
+$plugin->version   = 2015021400;        // The current plugin version (Date: YYYYMMDDXX).
 $plugin->requires  = 2014111000;        // Requires this Moodle version.
 $plugin->component = 'atto_fontsize';   // Full name of the plugin (used for diagnostics).
 $plugin->maturity = MATURITY_STABLE;
