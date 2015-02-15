@@ -27,7 +27,8 @@ defined('MOODLE_INTERNAL') || die();
 function atto_fontsize_strings_for_js() {
     global $PAGE;
 
-    $PAGE->requires->strings_for_js(array('x-small',
+    $PAGE->requires->strings_for_js(array('xx-small',
+                                          'x-small',
                                           'small',
                                           'medium',
                                           'large',

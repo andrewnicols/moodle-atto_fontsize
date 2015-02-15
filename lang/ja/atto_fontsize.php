@@ -23,6 +23,7 @@
  */
 
 $string['pluginname'] = '文字の大きさ';
+$string['xx-small']  = '非常に小さい';
 $string['x-small']  = '小さい';
 $string['small']    = 'やや小さい'; 
 $string['medium']   = '普通';

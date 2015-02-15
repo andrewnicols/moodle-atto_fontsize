@@ -23,6 +23,7 @@
  */
 
 $string['pluginname'] = 'Font size';
+$string['xx-small']  = 'XX Small';
 $string['x-small']  = 'X Small';
 $string['small']    = 'Small'; 
 $string['medium']   = 'Medium';
