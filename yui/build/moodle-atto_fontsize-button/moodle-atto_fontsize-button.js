@@ -33,28 +33,29 @@ YUI.add('moodle-atto_fontsize-button', function (Y, NAME) {
  * @extends M.editor_atto.EditorPlugin
  */
 
-var sizes = [
+var component = 'atto_fontsize',
+    sizes = [
         {
-            value: 1,
-            name: "X-Small"
+            value: '50%',
+            text:  'xx-small'
         }, {
-            value: 2,
-            name: "Small"
+            value: '65%',
+            text:  'x-small'
         }, {
-            value: 3,
-            name: "Medium"
+            value: '85%',
+            text:  'small'
         }, {
-            value: 4,
-            name: "Large"
+            value: '100%',
+            text:  'medium'
         }, {
-            value: 5,
-            name: "X-Large"
+            value: '120%',
+            text:  'large'
         }, {
-            value: 6,
-            name: "XX-Large"
+            value: '150%',
+            text:  'x-large'
         }, {
-            value: 7,
-            name: "XXX-Large"
+            value: '200%',
+            text:  'xx-large'
         }
     ];
 
@@ -63,7 +64,7 @@ Y.namespace('M.atto_fontsize').Button = Y.Base.create('button', Y.M.editor_atto.
         var items = [];
         Y.Array.each(sizes, function(size) {
             items.push({
-                text: '<font size="' + size.value + '">' + size.name + '</font>',
+                text: '<div style="font-size:' + size.value + ';">' + M.util.get_string(size.text, component) + '</div>',
                 callbackArgs: size.value,
                 callback: this._changeStyle
             });
@@ -88,8 +89,10 @@ Y.namespace('M.atto_fontsize').Button = Y.Base.create('button', Y.M.editor_atto.
      * @private
      */
     _changeStyle: function(e, size) {
-        document.execCommand("fontSize", false, size);
-    }
+        this.get('host').formatSelectionInlineStyle({
+            fontSize: size
+        });
+      }
 });
 
 
