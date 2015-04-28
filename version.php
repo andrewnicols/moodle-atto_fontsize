@@ -28,8 +28,4 @@ $plugin->version   = 2015042701;        // The current plugin version (Date: YYY
 $plugin->requires  = 2014050800;        // Requires this Moodle version.
 $plugin->component = 'atto_fontsize';   // Full name of the plugin (used for diagnostics).
 $plugin->maturity = MATURITY_STABLE;
-<<<<<<< HEAD
 $plugin->release = '2.8 (Build 2015042701)';
-=======
-$plugin->release = '2.7 (Build 2015042701)';
->>>>>>> 6811262daaed26cc9215585d803ff822dede5a50
