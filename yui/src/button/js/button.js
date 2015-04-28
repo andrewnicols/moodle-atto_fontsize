@@ -15,7 +15,7 @@
 
 /*
  * @package    atto_fontsize
- * @copyright  2014 Andrew Nicols
+ * @copyright  2014 Andrew Nicols 2015 Adam Jenkins
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -33,26 +33,19 @@
 
 var sizes = [
         {
-            value: 1,
-            name: "X-Small"
+            name: "xx-small"
         }, {
-            value: 2,
-            name: "Small"
+            name: "x-small"
         }, {
-            value: 3,
-            name: "Medium"
+            name: "small"
         }, {
-            value: 4,
-            name: "Large"
+            name: "medium"
         }, {
-            value: 5,
-            name: "X-Large"
+            name: "large"
         }, {
-            value: 6,
-            name: "XX-Large"
+            name: "x-large"
         }, {
-            value: 7,
-            name: "XXX-Large"
+            name: "xx-large"
         }
     ];
 
@@ -61,8 +54,8 @@ Y.namespace('M.atto_fontsize').Button = Y.Base.create('button', Y.M.editor_atto.
         var items = [];
         Y.Array.each(sizes, function(size) {
             items.push({
-                text: '<font size="' + size.value + '">' + size.name + '</font>',
-                callbackArgs: size.value,
+                text: '<span style="font-size:' + size.name + ';">' + size.name + '</span>',
+                callbackArgs: size.name,
                 callback: this._changeStyle
             });
         });
@@ -85,7 +78,10 @@ Y.namespace('M.atto_fontsize').Button = Y.Base.create('button', Y.M.editor_atto.
      * @param {string} size The new font size
      * @private
      */
+
     _changeStyle: function(e, size) {
-        document.execCommand("fontSize", false, size);
-    }
+        this.get('host').formatSelectionInlineStyle({
+            fontSize: size
+        });
+      }
 });
