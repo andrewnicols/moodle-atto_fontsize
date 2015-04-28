@@ -5,6 +5,7 @@ Requirements
 ============
 
 - Moodle 2.7
+- Moodle 2.8
 
 Installation
 ============
