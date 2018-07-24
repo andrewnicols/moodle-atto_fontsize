@@ -15,12 +15,26 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'atto_fontsize', language 'en'.
+ * Privacy Subsystem implementation for atto_fontsize
  *
  * @package    atto_fontsize
- * @copyright  2014 Andrew Nicols
+ * @copyright  2018 Karen Holland
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'Font size';
-$string['privacy:metadata'] = 'The Atto fontsize plugin does not store any personal data.';
+namespace atto_fontsize\privacy;
+
+defined('MOODLE_INTERNAL') || die();
+
+class provider implements \core_privacy\local\metadata\null_provider {
+
+    /**
+     * Get the language string identifier with the component's language
+     * file to explain why this plugin stores no data.
+     *
+     * @return  string
+     */
+    public static function get_reason() : string {
+        return 'privacy:metadata';
+    }
+}
