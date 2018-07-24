@@ -4,8 +4,7 @@ Font Size plugin for Atto
 Requirements
 ============
 
-- Moodle 2.7
-- Moodle 2.8
+- Moodle 3.5
 
 Installation
 ============
